@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 
-app = Flask(__name__)
+response = Flask(__name__)
 
 users = []  # Danh sách user lưu trong RAM (tạm thời)
 
@@ -18,4 +18,4 @@ def get_users():
     return jsonify(users)  # Trả về danh sách user đã gửi
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    response.run(debug=True)
