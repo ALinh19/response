@@ -4,7 +4,7 @@ response = Flask(__name__)
 
 users = []  # Danh sách user lưu trong RAM (tạm thời)
 
-@app.route('/users', methods=['POST'])
+@response.route('/users', methods=['POST'])
 def add_user():
     data = request.json
     if "name" in data and "email" in data:
@@ -13,7 +13,7 @@ def add_user():
     else:
         return jsonify({"error": "Missing data!"}), 400
 
-@app.route('/users', methods=['GET'])
+@response.route('/users', methods=['GET'])
 def get_users():
     return jsonify(users)  # Trả về danh sách user đã gửi
 
