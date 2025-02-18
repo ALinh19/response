@@ -1,8 +1,8 @@
 import requests
 import json
 
-# API giả lập miễn phí (có thể thay bằng API backend thật của bạn)
-url = "http://127.0.0.1:5000/users"
+
+url = "https://demo-rest-api-b315.onrender.com/users"
 
 # Lấy dữ liệu đầu vào từ người dùng (giống như nhập form HTML)
 name = input("Nhập tên: ")
