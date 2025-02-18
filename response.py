@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 
-response = Flask(__name__)
+app = Flask(__name__)
 
 users = []  # Danh sách user lưu trong RAM (tạm thời)
 
-@response.route('/users', methods=['POST'])
+@app.route('/users', methods=['POST'])
 def add_user():
     data = request.json
     if "name" in data and "email" in data:
@@ -13,9 +13,9 @@ def add_user():
     else:
         return jsonify({"error": "Missing data!"}), 400
 
-@response.route('/users', methods=['GET'])
+@app.route('/users', methods=['GET'])
 def get_users():
     return jsonify(users)  # Trả về danh sách user đã gửi
 
 if __name__ == '__main__':
-    response.run(debug=True)
+    app.run(debug=True)
