@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_users():
-    url = "https://demo-rest-api-ewdl.onrender.com/users"  # API lấy danh sách user
+    url = "https://demo-rest-api-b315.onrender.com/users"  # API lấy danh sách user
     response = requests.get(url)
 
     if response.status_code == 200:
